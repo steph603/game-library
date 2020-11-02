@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Create your own fork
 
-Things you may want to cover:
+1. Clone your fork
 
-* Ruby version
+1. run `bundle install`
 
-* System dependencies
+1. run `yarn install --check-files`
 
-* Configuration
+1. run `rails db:migrate`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
