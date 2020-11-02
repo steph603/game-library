@@ -1,11 +1,12 @@
 # README
 
-Create your own fork
+1. Create your own fork
 
-Clone your fork
+1. Clone your fork
 
-run `bundle install`
-run `yarn install --check-files`
+1. run `bundle install`
 
-run `rails db:migrate`
+1. run `yarn install --check-files`
+
+1. run `rails db:migrate`
 
