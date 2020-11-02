@@ -3,18 +3,16 @@
         <a class="active" href="#home">Home</a>
         <%= link_to "Home", :root %>
         <%= link_to "Sign In", :new_user_session%>
-        <a href="#Games List">Games List</a>
-        <a href="#My Games">My Games</a>
-        <a href="#New Game">New Game</a>
-        <a href="#All Games">All Games</a>
+        <a href="#Games Collections">Games Collections</a>
+        <a href="#My Collection">My Collection</a>
+        <%= link_to "Library", games_path%>  
         <%= link_to "Sign Out", :destroy_user_session, method: "delete" %>
     </div>
+
     <% if user_signed_in? %>
     <span class="nav-greeting"> <%="Welcome back, #{current_user.username}"%></span>
 
-    <% p "HELLO PAY ATTENTION"%>
-    <% p current_user[:id], current_user[:username] %>
- 
+
     <% else %>
         
         <%= link_to "Sign Up", :new_user_registration%>
