@@ -65,11 +65,12 @@ class GamesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_game
       @game = Game.find(params[:id])
+
     end
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.fetch(:game, {})
-      params.permit(:picture)
+      params.fetch(:game, :picture)
+      params.require(:game).permit(:title, :picture)
     end
 end
