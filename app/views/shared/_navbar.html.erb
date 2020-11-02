@@ -1,20 +1,22 @@
 <nav> 
     <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <%= link_to "Home", :root %>
-        <%= link_to "Sign In", :new_user_session%>
+
+
+        <%= link_to "Home", :root, class: 'active' %>
+        <% if !user_signed_in? %>
+            <%= link_to "Sign In", :new_user_session%>
+            <%= link_to "Sign Up", :new_user_registration %>
+        <% end %>
+
         <a href="#Games Collections">Games Collections</a>
         <a href="#My Collection">My Collection</a>
         <%= link_to "Library", games_path%>  
-        <%= link_to "Sign Out", :destroy_user_session, method: "delete" %>
+        <% if user_signed_in? %>
+            <%= link_to "Sign Out", :destroy_user_session, method: "delete" %>
+        <% end %>
     </div>
 
     <% if user_signed_in? %>
-    <span class="nav-greeting"> <%="Welcome back, #{current_user.username}"%></span>
-
-
-    <% else %>
-        
-        <%= link_to "Sign Up", :new_user_registration%>
-        <% end %>
+        <span class="nav-greeting"> <%="Welcome back, #{current_user.username}"%></span>
+    <% end %>
  </nav>
