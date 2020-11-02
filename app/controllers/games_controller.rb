@@ -69,6 +69,7 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.fetch(:game, :picture)
+      params.fetch(:game, {})
+      params.permit(:picture)
     end
 end

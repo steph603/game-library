@@ -12,6 +12,9 @@
 <h2> This page will show all the games </h2>
   <tbody>
     <% @games.each do |game| %>
+    
+    <%= image_tag game.picture if game.picture.attached? %>
+
       <tr>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
