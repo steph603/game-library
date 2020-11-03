@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_02_093702) do
+ActiveRecord::Schema.define(version: 2020_11_03_003106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2020_11_02_093702) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "collections", force: :cascade do |t|
+    t.boolean "wishlist"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_collections_on_user_id"
+  end
+
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -56,4 +64,5 @@ ActiveRecord::Schema.define(version: 2020_11_02_093702) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "collections", "users"
 end
