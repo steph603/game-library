@@ -5,5 +5,6 @@ class PagesController < ApplicationController
 
   def restricted
   end
+
   
 end
