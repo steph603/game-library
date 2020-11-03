@@ -1,12 +1,17 @@
 body {
   background-color: #fff;
   color: #333;
-  margin: 0px; }
+}
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; }
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 18px;
+  line-height: 18px;
+  color: black;
+  outline: #333;
+  margin: 0;
+  border: 0;
+}
 
 pre {
   background-color: #eee;
@@ -20,6 +25,17 @@ a {
   color: black;
   text-align: center;
  }
+
+.field {
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: center;
+    font-family: 'IBM Plex Serif', serif;
+  }
+}
 
 a:visited {
   color: #666; }
