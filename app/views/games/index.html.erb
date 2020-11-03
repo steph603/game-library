@@ -10,6 +10,7 @@
   </thead>
 <h1> Hooray! </h1>
 <h2> This page will show all the games </h2>
+<div class="imgdiv">
   <tbody>
     <% @games.each do |game| %>
 
@@ -26,7 +27,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Game', new_game_path %>
