@@ -13,15 +13,12 @@
             <%= link_to "Sign Up |", :new_user_registration %>
         <% end %>
 
-        <a href="#Games Collections">Games Collections |</a>
-        <a href="#My Collection">My Collection</a>
-        <%= link_to "| Library", games_path%>  
+        <%= link_to "My Collection", :collection_my_collection %> 
+        <%= link_to "All Collections", :collection_collections %> 
+
+        <%= link_to "Game Library", games_path%>  
         <% if user_signed_in? %>
             <%= link_to "Sign Out", :destroy_user_session, method: "delete" %>
         <% end %>
     </div>
-
-    <% if user_signed_in? %>
-        <span class="nav-greeting"> <%="Welcome back, #{current_user.username}"%></span>
-    <% end %>
  </nav>
