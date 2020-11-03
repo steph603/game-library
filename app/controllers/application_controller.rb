@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    before_action :authenticate_user!, only: [:restricted]
+    before_action :authenticate_user!, only: [:restricted, :my_collection]
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     protected
