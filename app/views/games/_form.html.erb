@@ -15,18 +15,20 @@
 
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %><br />
-    <%= form.text_field :title, autofocus: true %>
-  </div>
-
+<div class="logformbox">
     <div class="field">
-    <%= form.label :picture %><br />
-    <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg'%>
-  </div>
+      <%= form.label :title %><br />
+      <%= form.text_field :title, autofocus: true %>
+    </div>
+
+      <div class="field">
+      <%= form.label :picture %><br />
+      <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg'%>
+    </div>
 
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
