@@ -1,0 +1,6 @@
+<%@games.each do |game|%>
+<br>
+   <%= image_tag game.picture if game.picture.attached? %> <br>
+    <%= game.title %> 
+<br>
+<%end%>
