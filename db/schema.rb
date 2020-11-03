@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_012449) do
+ActiveRecord::Schema.define(version: 2020_11_03_234858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_11_03_012449) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "collections", id: false, force: :cascade do |t|
+  create_table "collections", force: :cascade do |t|
     t.boolean "wishlist"
     t.bigint "user_id"
     t.bigint "game_id"
@@ -48,6 +48,24 @@ ActiveRecord::Schema.define(version: 2020_11_03_012449) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
+    t.integer "year"
+    t.text "description"
+    t.bigint "genre_id", null: false
+    t.bigint "publisher_id", null: false
+    t.index ["genre_id"], name: "index_games_on_genre_id"
+    t.index ["publisher_id"], name: "index_games_on_publisher_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "genre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "publishers", force: :cascade do |t|
+    t.string "publisher"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,4 +84,6 @@ ActiveRecord::Schema.define(version: 2020_11_03_012449) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "collections", "games"
   add_foreign_key "collections", "users"
+  add_foreign_key "games", "genres"
+  add_foreign_key "games", "publishers"
 end
