@@ -2,7 +2,14 @@ class CollectionController < ApplicationController
 
     def my_collection
 
-        @games = Game.all
+        @games = Collection.all
+        @collection = []
+        @games.each { |game| 
+            if game.user_id == current_user.id
+                @collection << game
+            end
+        }
+
 
     end
     
