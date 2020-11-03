@@ -1,11 +1,13 @@
 h1 {
     text-align: center;
+    color: #444B6E;
 }
 
 .topnav {
     background-color: #444B6E;
     overflow: hidden;
     text-align: center;
+    border-radius: 2px;
   }
   
   .topnav a {
@@ -16,6 +18,7 @@ h1 {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    border-radius: 5px;
   }
   
   .topnav a:hover {
@@ -24,27 +27,42 @@ h1 {
   }
   
   .topnav a.active {
-    background-color: #9AB97A;
+    background-color: #3D315B;
     color: white;
   }
 
   .dtext {
-      display: flex
-      flex-direction: row;
+      display: inline-flex;
+      flex-direction: column;
+      flex-wrap: wrap;
       width: 30%;
       height: 50%;
       text-align: center;
       padding-top: 50px;
       padding-left: 70px;
+      margin: 0;
+      color: #444B6E;
   }
 
   .dimage {
-    display: flex
-    justify-content: flex-end;
-    flex-direction: row-reverse;
-    /* width: 400px;
-    height: 900px;
-    text-align: center;
-    padding-top: 50px;
-    padding-left: 70px; */
+    float: right;
+     width: 40%;
+    height: 50%;
+    margin-top: 0;
+    padding-right: 15%;
+    padding-top: 30px;
+}
+
+img {
+  height: 400px;
+  width: 350px;
+  padding: 0;
+  margin: 0;
+  float: right;
+}
+
+body {
+  background-color: #ddd;
+  padding: 0;
+  margin: 0;
 }
