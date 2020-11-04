@@ -22,7 +22,7 @@ class GamesController < ApplicationController
     @publisher = 
 
     @publishers.each { |pub| 
-    @publisher[pub.publisher => pub.id]
+    # @publisher[pub.publisher => pub.id]
   }
 
     @genre_name = []
@@ -87,7 +87,7 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.fetch(:game, :picture, :publisher)
-      params.require(:game).permit(:title, :picture, :publisher)
+      # params.fetch(:game, :picture, :publisher)
+      params.require(:game).permit(:title, :picture, :publisher_id, :genre_id)
     end
 end

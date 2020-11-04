@@ -26,10 +26,20 @@
 
     <div class="field">
       <%= form.label :publisher %>
-      <%= form.select(:publisher, options_for_select(@publisher[:key]), selected: @publisher) %>
+      <%= form.collection_select(:publisher_id, Publisher.all, :id,  :publisher) %>
     </div>
 
-      <div class="field">
+        <div class="field">
+      <%= form.label :genre %>
+      <%= form.collection_select(:genre_id, Genre.all, :id,  :genre) %>
+    </div>
+
+
+<% form.fields_for :game do |p| %>
+<% end %>
+
+
+    <div class="field"> 
       <%= form.label :picture %><br />
       <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg'%>
     </div>
