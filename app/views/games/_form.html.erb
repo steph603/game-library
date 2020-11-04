@@ -21,6 +21,14 @@
       <%= form.text_field :title, autofocus: true %>
     </div>
 
+
+
+
+    <div class="field">
+      <%= form.label :publisher %>
+      <%= form.select(:publisher, options_for_select(@publisher[:key]), selected: @publisher) %>
+    </div>
+
       <div class="field">
       <%= form.label :picture %><br />
       <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg'%>

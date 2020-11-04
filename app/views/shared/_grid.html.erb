@@ -1,10 +1,11 @@
-<%@games.each do |game|%>
-    
+
     <table>
         <tbody>
+        <%@games.each do |game|%>
+    
         <td><%= image_tag game.picture if game.picture.attached? %> </td>
         <td>     <%= game.title %> </td>
-        </tbody>
-    </table>
 
 <%end%>
+        </tbody>
+    </table>

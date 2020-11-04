@@ -14,7 +14,24 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
+
     @game = Game.new
+    @publishers = Publisher.all
+    @genres = Genre.all
+
+    @publisher = 
+
+    @publishers.each { |pub| 
+    @publisher[pub.publisher => pub.id]
+  }
+
+    @genre_name = []
+    @genre_id = []
+
+    @genres.each { |gen| 
+    @genre_name << gen.genre
+    @genre_id << gen.id}
+
   end
 
   # GET /games/1/edit
@@ -70,7 +87,7 @@ class GamesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def game_params
-      params.fetch(:game, :picture)
-      params.require(:game).permit(:title, :picture)
+      params.fetch(:game, :picture, :publisher)
+      params.require(:game).permit(:title, :picture, :publisher)
     end
 end
