@@ -14,8 +14,6 @@
   <tbody>
     <% @games.each do |game| %>
 
-    
-
       <tr>
       <td><%= image_tag game.picture if game.picture.attached? %> </td>
       <td>     <%= game.title %> </td>
